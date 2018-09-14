@@ -11,7 +11,7 @@ import java.util.concurrent.*;
  * java类简单作用描述
  *
  * @ProjectName: MapDemo
- * @Package: com.zl.cconcurrency.code
+ * @Package: com.zl.concurrency.code
  * @ClassName: ${TYPE_NAME}
  * @Description: java类作用描述
  * @Author: zhanglie
