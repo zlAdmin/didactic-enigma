@@ -1,4 +1,4 @@
-package com.zl.cconcurrency.example;
+package com.zl.collection.ArrayListTest;
 
 
 
@@ -12,7 +12,7 @@ import java.util.Iterator;
  * @ProjectName: MapDemo
  * @Package: com.zl.cconcurrency.example
  * @ClassName: ${TYPE_NAME}
- * @Description: java类作用描述
+ * @Description: ArrayList迭代
  * @Author: zhanglie
  * @CreateDate: 2018/9/13 18:34
  * @UpdateUser: Zhanglei

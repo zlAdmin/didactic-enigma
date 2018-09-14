@@ -28,9 +28,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @ThreadSafe
 public class AtomicIntegerExample {
-    //请求总数
+    /** 请求总数 **/
     public static  int clientTotal = 5000;
-    //同时并发执行的线程数
+    /** 同时并发执行的线程数 **/
     public static  int threadTotal = 200;
 
     public static AtomicInteger count = new AtomicInteger(0);
@@ -55,6 +55,13 @@ public class AtomicIntegerExample {
         executorService.shutdown();
         log.info("count:{}",count.get());
     }
+   /**
+    * @Author zhanglei
+    * @Description //TODO 
+    * @Date 13:23 2018/9/14
+    * @Param 
+    * @return 
+    **/
     private  static  void add() {
         count.incrementAndGet();
     }
