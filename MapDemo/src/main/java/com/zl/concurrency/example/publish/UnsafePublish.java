@@ -5,6 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 
+/**
+ * @author zhanglei
+ * 对象不安全发布
+ */
 @Slf4j
 @NotThreadSafe
 public class UnsafePublish {

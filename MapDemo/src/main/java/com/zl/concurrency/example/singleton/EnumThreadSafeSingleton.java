@@ -26,8 +26,9 @@ public class EnumThreadSafeSingleton {
 
         private EnumThreadSafeSingleton singleton;
 
-        //JVM保证这个方法只被绝对调用一次
+        /** JVM保证这个方法只被绝对调用一次 **/
         Singleton() {
+
             singleton = new EnumThreadSafeSingleton();
         }
         public EnumThreadSafeSingleton getSingleton() {
