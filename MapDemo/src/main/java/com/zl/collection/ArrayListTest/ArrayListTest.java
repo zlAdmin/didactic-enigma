@@ -10,7 +10,7 @@ import java.util.Iterator;
  * java类简单作用描述
  *
  * @ProjectName: MapDemo
- * @Package: com.zl.cconcurrency.example
+ * @Package: com.zl.concurrency.example
  * @ClassName: ${TYPE_NAME}
  * @Description: ArrayList迭代
  * @Author: zhanglie
