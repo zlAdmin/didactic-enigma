@@ -1,8 +1,5 @@
-package com.zl.demo.Unit;
+package com.zl.demo.unit;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -10,7 +7,7 @@ import java.util.stream.Collectors;
 /**
  *
  * @ProjectName: MapDemo
- * @Package: com.zl.demo.Unit
+ * @Package: com.zl.demo.unit
  * @ClassName: ${TYPE_NAME}
  * @Description: java类作用描述
  * @Author: zhanglie
