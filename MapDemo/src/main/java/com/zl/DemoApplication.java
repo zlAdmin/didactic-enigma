@@ -26,7 +26,7 @@ public class DemoApplication extends WebMvcConfigurerAdapter {
 	public FilterRegistrationBean httpFilter(){
 		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
 		registrationBean.setFilter(new HttpFilter());
-		registrationBean.addUrlPatterns("/zl/threadLocal/*");
+		registrationBean.addUrlPatterns("/threadLocal/*");
 		return registrationBean;
 	}
 
