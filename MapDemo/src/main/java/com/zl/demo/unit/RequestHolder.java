@@ -10,7 +10,7 @@ package com.zl.demo.unit;
  * <p>Copyright: Copyright (zl) 2018</p>
  **/
 public class RequestHolder {
-    private static final ThreadLocal<Long> requestHolder = new ThreadLocal<>();
+    private final static ThreadLocal<Long> requestHolder = new ThreadLocal<>();
 
     public static void add(Long id){
         requestHolder.set(id);

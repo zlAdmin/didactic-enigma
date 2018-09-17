@@ -27,17 +27,17 @@ public class SynchronizeExample2 {
         SynchronizeExample2 synchronizeExample1 = new SynchronizeExample2();
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(() -> {
-            synchronizeExample1.test1();
+            SynchronizeExample2.test1();
         });
 
         executorService.execute(() -> {
-            synchronizeExample1.test1();
+            SynchronizeExample2.test1();
         });
         executorService.execute(() -> {
-            synchronizeExample1.test2();
+            SynchronizeExample2.test2();
         });
         executorService.execute(() -> {
-            synchronizeExample1.test2();
+            SynchronizeExample2.test2();
         });
     }
 
