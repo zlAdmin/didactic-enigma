@@ -44,6 +44,12 @@ public abstract class AbstractCountDownLunchTemp {
         executorService.shutdown();
         log.info("结束:{}","执行完毕！");
     }
-    /** 自定义方法 **/
+    /**
+     * @Author zhanglei
+     * @Description  自定义方法
+     * @Date 9:36 2018/9/17
+     * @Param  传入int值
+     * @return
+     **/
     public abstract void definedMethods(final int param);
 }

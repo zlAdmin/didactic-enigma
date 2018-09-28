@@ -1,5 +1,6 @@
-package com.zl.demo.unit;
+package com.zl.demo.test;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 /**
@@ -25,25 +26,26 @@ public class OptionalTest {
         Optional<String> name = Optional.of("name");
         //生成一个null
         String test = null;
-        /*Optional.ofNullable(test).orElseThrow(() -> new NoSuchElementException());
+        Optional.ofNullable(test).orElseThrow(() -> new NoSuchElementException());
         String email = Optional.ofNullable(test)
-                .map(n -> n).orElse("ssss");*/
+                .map(n -> n).orElse("ssss");
 
-        Optional<String> result = Optional.ofNullable("name@123")
-                .filter(u -> u != null && u.contains("@"));
+        Optional<String> result = Optional.ofNullable("11")
+                .filter(u -> u != null && Integer.parseInt(u)>0 && Integer.parseInt(u)<15 );
         System.out.println(result.isPresent());
 
-        //String ss = Optional.ofNullable(test).orElse("hello word");
 
-        //System.out.println(ss);
+        String ss = Optional.ofNullable(test).orElse("hello word");
 
-        /*if (emty.isPresent()){
+        System.out.println(ss);
+
+        if (emty.isPresent()){
             System.out.println("不为空");
         }else{
             System.out.println("为空");
         }
         emty.ifPresent(s -> System.out.println("值为：" + s));
-        name.ifPresent(n -> System.out.println("值为：" + n));*/
+        name.ifPresent(n -> System.out.println("值为：" + n));
 
 
 

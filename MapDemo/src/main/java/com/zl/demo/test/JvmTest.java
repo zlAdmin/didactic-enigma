@@ -1,6 +1,7 @@
-package com.zl.demo.unit;
+package com.zl.demo.test;
 
 import java.util.Random;
+import static com.zl.unit.printunit.PrintUnit.print;
 
 /**
  * java类简单作用描述
@@ -17,16 +18,17 @@ import java.util.Random;
  * @Version: 1.0
  * <p>Copyright: Copyright (c) 2018</p>
  */
-public class JVMTest {
+public class JvmTest {
     public static void main(String[] args){
 
-        long maxMemory = Runtime.getRuntime().maxMemory();//返回Java虚拟机试图使用的最大内存量。
+        /* 返回Java虚拟机试图使用的最大内存量*/
+        long maxMemory = Runtime.getRuntime().maxMemory();
+        /* 返回Java虚拟机中的内存总量 */
+        Long totalMemory = Runtime. getRuntime().totalMemory();
 
-        Long totalMemory = Runtime. getRuntime().totalMemory();//返回Java虚拟机中的内存总量。
+        print("MAX_MEMORY ="+maxMemory +"(字节)、"+(maxMemory/(double)1024/1024) + "MB");
 
-        System.out.println("MAX_MEMORY ="+maxMemory +"(字节)、"+(maxMemory/(double)1024/1024) + "MB");
-
-        System.out.println("TOTAL_ MEMORY = "+totalMemory +"(字节)"+(totalMemory/(double)1024/1024) + "MB");
+        print("TOTAL_ MEMORY = "+totalMemory +"(字节)"+(totalMemory/(double)1024/1024) + "MB");
 
         String str = "www.baidu.com";
 

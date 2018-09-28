@@ -1,8 +1,9 @@
-package com.zl.demo.unit;
+package com.zl.demo.test;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import static com.zl.unit.printunit.PrintUnit.print;
 
 /**
  *
@@ -18,11 +19,10 @@ import java.util.stream.Collectors;
  * @Version: 1.0
  * <p>Copyright: Copyright (c) 2018</p>
  */
-public class Test {
+public class ForeachTest {
     public  static volatile boolean b = false;
     public  static  void main(String[] arg){
-        Test.testThread();
-
+        ForeachTest.testThread();
     }
     private static void testhashMap(){
         System.out.print(System.currentTimeMillis());
@@ -38,6 +38,9 @@ public class Test {
             String s = String.valueOf(a);
             list.add("hello"+s);
         }
+        list.forEach((String i)->{
+            print(i);
+        });
         List newList = list.stream().distinct().collect(Collectors.toList());
         System.out.print(newList);
         ThreadLocalRandom random = ThreadLocalRandom.current();

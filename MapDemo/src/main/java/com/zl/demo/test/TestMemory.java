@@ -1,4 +1,4 @@
-package com.zl.demo.unit;
+package com.zl.demo.test;
 
 /**
  * java类简单作用描述
@@ -15,12 +15,14 @@ package com.zl.demo.unit;
  * @Version: 1.0
  * <p>Copyright: Copyright (c) 2018</p>
  */
-public class TestMemmory {
+public class TestMemory {
     public static void main(String[] args){
 
-        long maxMemory = Runtime.getRuntime().maxMemory();//返回Java虚拟机试图使用的最大内存量。
+        /* 返回Java虚拟机试图使用的最大内存量 */
+        long maxMemory = Runtime.getRuntime().maxMemory();
 
-        Long totalMemory = Runtime. getRuntime().totalMemory();//返回Java虚拟机中的内存总量。
+        /* 返回Java虚拟机中的内存总量 */
+        Long totalMemory = Runtime. getRuntime().totalMemory();
 
         System.out.println("MAX_MEMORY ="+maxMemory +"(字节)、"+(maxMemory/(double)1024/1024) + "MB");
 

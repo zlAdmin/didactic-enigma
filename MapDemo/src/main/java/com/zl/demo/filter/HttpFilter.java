@@ -1,8 +1,7 @@
 package com.zl.demo.filter;
 
-import com.zl.demo.unit.RequestHolder;
+import com.zl.demo.test.RequestHolder;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.context.request.RequestContextHolder;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
