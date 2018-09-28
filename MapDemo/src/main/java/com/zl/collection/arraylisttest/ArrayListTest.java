@@ -1,4 +1,4 @@
-package com.zl.collection.ArrayListTest;
+package com.zl.collection.arraylisttest;
 
 
 
