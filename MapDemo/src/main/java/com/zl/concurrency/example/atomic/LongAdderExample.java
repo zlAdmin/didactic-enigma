@@ -41,6 +41,6 @@ public class LongAdderExample extends AbstractCountDownLunchComm {
 
     @Override
     public void definedMethods() {
-            count.add(1);
+        count.add(1);
     }
 }

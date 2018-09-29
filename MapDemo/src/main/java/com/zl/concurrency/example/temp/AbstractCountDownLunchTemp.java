@@ -36,8 +36,9 @@ public abstract class AbstractCountDownLunchTemp {
                     semaphore.release();
                 } catch (InterruptedException e) {
                     log.error("exception"+e);
+                } finally {
+                    countDownLatch.countDown();
                 }
-                countDownLatch.countDown();
             });
         }
         countDownLatch.await();

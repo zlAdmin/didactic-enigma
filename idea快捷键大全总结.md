@@ -1,0 +1,31 @@
+# IDEA快捷键使用大全 #
+- Ctrl + Shift + Space    	提示输入关键字相关信息
+- Alt + Insert				自动生成某个类的 Getters, Setters, Constructors, hashCode/equals, toString 等代码
+- Ctrl + o					展示该类中所有覆盖或者实现的方法列表
+- Ctrl + Alt + T			自动生成具有环绕性质的代码
+- Ctrl + /					单行注释
+- Ctrl + Shift + /			多行注释
+- Ctrl + w 					选中当前光标所在的代码块，多次触发
+- Ctrl + Shift + W			是 Ctrl + W 的反向操作，多次触发
+- Ctrl + Alt + L			格式化代码
+- Ctrl + Alt + O			去除没有实际用到的包
+- Ctrl + Shift + V			从之前的剪切或拷贝的代码历史记录中，选择现在需要粘贴的内容
+- Ctrl + D					复制当前行代码
+- Ctrl + Y					删除当前行代码
+- Ctrl + Shift + U			所选择的内容进行大小写转换
+- Shift + F6				修改名字
+- Alt + Shift + F10			会打开一个已经配置的运行列表，让你选择一个后，再运行 
+# 调试 #
+- F8						跳到当前代码下一行
+- F7						跳入到调用的方法内部代码
+- Shift + F7				会打开一个面板，让你选择具体要跳入的类方法
+- Shift + F8				跳出当前的类，到上一级
+- Alt + F9					让代码运行到当前光标所在处
+- F9						结束当前断点的本轮调试
+# 查询 #
+- Ctrl + N					打开类查询框
+- Ctrl + Shift + N			打开文件查询框
+- Ctrl + Alt + B			跳转到实现类
+- Ctrl + B					跳转到调用位置
+- Ctrl + F12				打开类的结构列表
+- Ctrl + H					打开类的继承关系列表
