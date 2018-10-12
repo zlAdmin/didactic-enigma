@@ -2,6 +2,13 @@ package com.zl.demo.model;
 
 import java.io.Serializable;
 
+/**
+ * @Author zhanglei
+ * @Description 坐标点
+ * @Date 14:40 2018/10/11
+ * @Param 
+ * @return 
+ **/
 public class BasePosition implements Serializable {
     /**
      *Comment for <code>serialVersionUID</code>
