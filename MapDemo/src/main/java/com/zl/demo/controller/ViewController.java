@@ -26,7 +26,7 @@ public class ViewController {
         String json= JSONObject.toJSONString(list);
         JSONArray subMsgs  = JSONObject.parseArray(json);
         System.out.print(subMsgs);
-        view.addObject("data_json",subMsgs);
+        view.addObject("data_json",subMsgs) ;
         return view;
 
     }
