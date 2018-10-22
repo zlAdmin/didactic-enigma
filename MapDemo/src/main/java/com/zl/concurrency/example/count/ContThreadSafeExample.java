@@ -6,12 +6,11 @@ import com.zl.concurrency.example.temp.AbstractCountDownLunchComm;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * java类简单作用描述
  *
  * @ProjectName: MapDemo
  * @Package: com.zl.concurrency.code
  * @ClassName: ${TYPE_NAME}
- * @Description: java类作用描述
+ * @Description: 通过锁机制实现线程安全
  * @Author: zhanglie
  * @CreateDate: 2018/9/11 21:35
  * @UpdateUser: Zhanglei

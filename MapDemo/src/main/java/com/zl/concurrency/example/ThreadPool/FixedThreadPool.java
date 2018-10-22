@@ -9,12 +9,11 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * java类简单作用描述
  *
  * @ProjectName: MapDemo
  * @Package: com.zl.concurrency.example.ThreadPool
  * @ClassName: ${TYPE_NAME}
- * @Description: java类作用描述
+ * @Description: semaphore控制并发线程数，
  * @Author: zhanglie
  * @CreateDate: 2018/9/13 17:43
  * @UpdateUser: Zhanglei
@@ -41,7 +40,7 @@ public class FixedThreadPool {
         for (int i = 0; i < clientTotal; i++) {
             atomicInteger.incrementAndGet();
             while (atomicInteger.get() > 4){
-                Thread.sleep(5);
+                Thread.sleep(300);
                 log.info("--------------");
             }
             executorService.execute(() -> {

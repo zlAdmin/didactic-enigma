@@ -1,6 +1,7 @@
 package com.zl.concurrency.example.sync;
 
 import com.zl.concurrency.annoations.NotThreadSafe;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Vector;
 
@@ -13,13 +14,14 @@ import java.util.Vector;
  * @Version: 1.0
  * <p>Copyright: Copyright (acmtc) 2018</p>
  **/
+@Slf4j
 @NotThreadSafe
 public class VectorExample {
     private static Vector<Integer> vector = new Vector<>();
 
     public static void main(String[] args) {
         while (true){
-            for (int i = 0; i < vector.size(); i++) {
+            for (int i = 0; i <1; i++) {
                 vector.add(i);
             }
             Thread thread1 = new Thread(){
