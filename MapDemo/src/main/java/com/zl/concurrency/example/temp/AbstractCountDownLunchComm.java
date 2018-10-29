@@ -1,5 +1,6 @@
 package com.zl.concurrency.example.temp;
 
+import com.zl.concurrency.example.ThreadPoolResource.ThreadPoolInstance;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
@@ -20,7 +21,7 @@ import java.util.concurrent.Semaphore;
 public abstract class AbstractCountDownLunchComm {
     protected int clientTotal ;
     protected int threadTotal ;
-    private static final ExecutorService executorService = Executors.newCachedThreadPool();
+    private static final ExecutorService executorService = ThreadPoolInstance.getThreadPollInstance();
 
     public void execute(int clientTotal, int threadTotal) throws Exception {
         this.clientTotal = clientTotal;
@@ -36,6 +37,7 @@ public abstract class AbstractCountDownLunchComm {
                 } catch (InterruptedException e) {
                     log.error("exception"+e);
                 }
+                log.info("单执行完毕{}",Thread.currentThread().getId());
                 countDownLatch.countDown();
             });
         }
@@ -44,5 +46,5 @@ public abstract class AbstractCountDownLunchComm {
         log.info("结束:{}","执行完毕！");
     }
     /** 自定义方法 **/
-    public abstract void definedMethods();
+    public abstract void definedMethods() throws InterruptedException;
 }
