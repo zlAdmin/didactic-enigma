@@ -19,7 +19,9 @@ public class HashMapTest {
     public static void main(String[] args) {
         //testForReturn();
         //putNullKey();
-        testHash();
+        //testHash();
+        //tableSizeFor();
+        tess();
     }
 
     /**
@@ -66,5 +68,33 @@ public class HashMapTest {
     static final int hash(Object key) {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
+    static void tableSizeFor(){
+        int cap = 10;
+        int MAXIMUM_CAPACITY = 1 << 30;
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        System.out.println(n);
+        System.out.println((n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1);
+    }
+    static void teset(){
+        int n = 11;
+        System.out.println(n >>> 1);
+        int m = 11;
+        System.out.println(m >> 1);
+    }
+
+    static void tess(){
+        int a = 3;
+        int b = 5;
+        System.out.println(a & b);
+        System.out.println(a | b);
+        System.out.println(a ^ b);
+        System.out.println(~ 0);
     }
 }
