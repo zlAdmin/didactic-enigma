@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Optional;
 
+
 /**
  * 测试2
  *
@@ -27,5 +28,7 @@ public class OptionalTest2 {
         Optional<String> empty = Optional.empty();
         Optional optional = Optional.ofNullable(null);
         Optional<String> name = Optional.of("name");
+
+
     }
 }
