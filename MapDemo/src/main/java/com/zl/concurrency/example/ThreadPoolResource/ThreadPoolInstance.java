@@ -19,9 +19,9 @@ public class ThreadPoolInstance {
             .setNameFormat("zl_pool-%d").build();
 
 
-    public static ExecutorService getThreadPollInstance(){
-        ExecutorService pool = new ThreadPoolExecutor(5, 200,
-                0L, TimeUnit.MICROSECONDS,
+    public static ExecutorService getThreadPollInstance(Integer corePoolSize, Integer maximumPoolSize, Long keepAliveTime){
+        ExecutorService pool = new ThreadPoolExecutor(corePoolSize, maximumPoolSize,
+                keepAliveTime, TimeUnit.MICROSECONDS,
                 new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
         return pool;
@@ -29,7 +29,7 @@ public class ThreadPoolInstance {
 
 
     public static void main(String[] args) {
-        ExecutorService pool = getThreadPollInstance();
+        ExecutorService pool = getThreadPollInstance(5, 200, 0L);
         pool.execute(()-> System.out.println("开始执行"));
         pool.shutdown();
     }
