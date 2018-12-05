@@ -45,6 +45,13 @@ public abstract class AbstractCountDownLunchComm {
         executorService.shutdown();
         log.info("结束:{}","执行完毕！");
     }
-    /** 自定义方法 **/
+    /**
+     * @Description 自定义方法
+     * @return void
+     * @throws 
+     * @Author zhanglei
+     * @Date 11:30 2018/12/5
+     * @Param []
+     **/
     public abstract void definedMethods() throws InterruptedException;
 }
