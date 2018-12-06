@@ -48,9 +48,9 @@ public abstract class AbstractCountDownLunchComm {
     /**
      * @Description 自定义方法
      * @return void
-     * @throws 
+     * @throws InterruptedException
      * @Author zhanglei
-     * @Date 11:30 2018/12/5
+     * @Date 15:42 2018/12/6
      * @Param []
      **/
     public abstract void definedMethods() throws InterruptedException;

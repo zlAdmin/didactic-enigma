@@ -15,16 +15,18 @@ import java.util.concurrent.*;
  **/
 public class ThreadPoolInstance {
 
-    public static ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
+    private static  final ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
             .setNameFormat("zl_pool-%d").build();
 
+    private static ExecutorService POOL = null;
 
     public static ExecutorService getThreadPollInstance(Integer corePoolSize, Integer maximumPoolSize, Long keepAliveTime){
-        ExecutorService pool = new ThreadPoolExecutor(corePoolSize, maximumPoolSize,
-                keepAliveTime, TimeUnit.MICROSECONDS,
-                new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
-
-        return pool;
+        if (POOL == null) {
+            POOL = new ThreadPoolExecutor(corePoolSize, maximumPoolSize,
+                    keepAliveTime, TimeUnit.MICROSECONDS,
+                    new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+        }
+        return POOL;
     }
 
 

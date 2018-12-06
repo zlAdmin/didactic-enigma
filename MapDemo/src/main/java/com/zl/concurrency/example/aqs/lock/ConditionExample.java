@@ -7,6 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Condintion锁测试类
+ *Condintion更精准的控制多线程的睡眠或唤醒
  *
  * @author zhagnlei
  * @ProjectName: zlAdmin

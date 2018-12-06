@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @ProjectName: MapDemo
  * @Package: com.zl.concurrency.code
  * @ClassName: ${TYPE_NAME}
- * @Description:ReentrantLock实现线程安全
+ * @Description:ReentrantLock实现线程安全  重入锁
  * @Author: zhanglie
  * @CreateDate: 2018/9/11 21:35
  * @UpdateUser: Zhanglei

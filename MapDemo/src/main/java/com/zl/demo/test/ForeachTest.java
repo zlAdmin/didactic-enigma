@@ -41,6 +41,7 @@ public class ForeachTest {
         list.forEach((String i)->{
             print(i);
         });
+        //去重操作
         List newList = list.stream().distinct().collect(Collectors.toList());
         System.out.print(newList);
         ThreadLocalRandom random = ThreadLocalRandom.current();

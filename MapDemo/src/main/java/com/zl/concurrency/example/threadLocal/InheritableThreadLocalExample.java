@@ -31,6 +31,7 @@ public class InheritableThreadLocalExample extends AbstractCountDownLunchComm {
         log.info("------------end------------");
         log.info("父线程获取TEST_IN_THREAD值：{}", TEST_THREAD_LOCAL.get());
         log.info("父线程获取TEST_THREAD_LOCAL值：{}", TEST_IN_THREAD.get());
+
     }
 
 
@@ -51,7 +52,7 @@ public class InheritableThreadLocalExample extends AbstractCountDownLunchComm {
  *                而TEST_THREAD_LOCAL获取为null，原因它并没有实现父线程变量的拷贝
  *  输入结果分析2：子线程修改自己的备份并没有在刷回父线程变量里面去
  *
- *  输出结果分析3：如果是使用线程池，在使用InheritableThreadLocal的时候，会因为线程复用而获取到该线程之前的父线程的拷贝
+ *  输出结果分析3：如果是使用线程池，在使用InheritableThreadLocal的时候，父线程A的子线程调用线程池线程a，a在使用完后并没有清除a线程中的threadLocal值，此时线程a被调用，导出取出的值仍然是之前值；会因为线程复用而获取到该线程之前的父线程的拷贝
  *
  *
  * */
