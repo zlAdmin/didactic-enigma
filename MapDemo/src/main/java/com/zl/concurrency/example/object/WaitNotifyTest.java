@@ -1,4 +1,4 @@
-package com.zl.concurrency.example.objectwaitnotify;
+package com.zl.concurrency.example.object;
 
 /**
  * Object类中的wait和notify功能验证

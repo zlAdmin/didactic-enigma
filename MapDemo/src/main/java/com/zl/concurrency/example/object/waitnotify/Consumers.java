@@ -1,10 +1,9 @@
-package com.zl.concurrency.example.objectwaitnotify;
+package com.zl.concurrency.example.object.waitnotify;
 
 import com.mysql.jdbc.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * 基于Object中的notify和wait实现生产者消费者模式
@@ -19,7 +18,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Slf4j
 public class Consumers implements Runnable {
     private BlockingQueue<String> queue;
-    /** 工作效率 */
+    /**
+     * 工作效率
+     */
     private long millis;
 
     public Consumers(BlockingQueue<String> queue, long millis) {

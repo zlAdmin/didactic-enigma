@@ -1,4 +1,4 @@
-package com.zl.concurrency.example.objectwaitnotify;
+package com.zl.concurrency.example.object.waitnotify;
 
 import com.zl.concurrency.example.ThreadPoolResource.ThreadPoolInstance;
 

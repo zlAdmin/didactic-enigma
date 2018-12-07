@@ -1,0 +1,3 @@
+- 总结
+   - InheritableThreadLocal解决了子线程获取父线程的线程变量问题，但是引出了如果使用线程池出现子线程复用无法清值问题；
+   - TransmittableThreadLocal是阿里针对InheritableThreadLocal的问题并对其进行改版的实现

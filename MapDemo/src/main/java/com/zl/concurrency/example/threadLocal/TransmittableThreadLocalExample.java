@@ -20,7 +20,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 public class TransmittableThreadLocalExample extends AbstractCountDownLunchComm {
     private static final TransmittableThreadLocal THREAD_LOCAL = new TransmittableThreadLocal();
-    private static AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public static void main(String[] args) throws Exception {
         Person person = new Person("hello word");
@@ -46,7 +45,6 @@ public class TransmittableThreadLocalExample extends AbstractCountDownLunchComm 
         public Person(String name) {
             this.name = name;
         }
-
 
         public String getName() {
             return name;

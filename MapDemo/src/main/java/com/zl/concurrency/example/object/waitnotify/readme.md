@@ -1,0 +1,1 @@
+基于Object的wait和notify实现一个生产者消费者模式
