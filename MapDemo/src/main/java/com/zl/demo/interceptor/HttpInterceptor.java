@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HttpInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("preHandle");
+        log.info("zl自定义拦截器+preHandle");
         return true;
     }
 

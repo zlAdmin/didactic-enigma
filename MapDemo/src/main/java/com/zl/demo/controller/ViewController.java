@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 @RestController
+@RequestMapping(value = "/show")
 public class ViewController {
     @Autowired
     private ResultBeanService resultService;

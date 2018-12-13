@@ -1,5 +1,6 @@
 package com.zl.demo.controller;
 
+import com.zl.concurrency.annoations.ZlTest;
 import com.zl.demo.model.Verification;
 import com.zl.demo.test.RequestHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -35,6 +36,7 @@ public class ThreadLocalController {
     private Validator validator;
     @RequestMapping("test")
     @ResponseBody
+    @ZlTest(param = "hello wold")
     public long test(){
         return RequestHolder.getId();
     }
