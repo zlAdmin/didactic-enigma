@@ -8,7 +8,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 /**
- * Spel解析
+ * EL表达式工具类
  *
  * @author zhagnlei
  * @ProjectName: demo
@@ -57,6 +57,6 @@ public class SpelParser {
 
     public static void main(String[] args) {
         String key = "'getAudioListByBIdNo.'+#bIdNo";
-        System.out.println(getKey(key, "1232", new String[]{"bIdNo"}, new Object[]{"B19001084"}));
+        System.out.println(getKey(key, "", new String[]{"bIdNo"}, new Object[]{"B19001084"}));
     }
 }
