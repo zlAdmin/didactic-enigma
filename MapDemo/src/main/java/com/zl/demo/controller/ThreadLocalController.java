@@ -36,8 +36,8 @@ public class ThreadLocalController {
     private Validator validator;
     @RequestMapping("test")
     @ResponseBody
-    @ZlTest(param = "hello wold")
-    public long test(){
+    @ZlTest(param = "#id")
+    public long test(String id, String name){
         return RequestHolder.getId();
     }
 

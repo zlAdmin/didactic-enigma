@@ -3,11 +3,16 @@ package com.zl.demo.aspect;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.zl.concurrency.annoations.ZlTest;
+import com.zl.demo.unit.SpelParser;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Method;
 
 /**
  * 定义一个切面，用于统计指定注解的方法调用时间
@@ -56,11 +61,32 @@ public class ZlAspect {
     @Around("serviceStatistics(zlTest)")
     public Object doAround(ProceedingJoinPoint joinPoint, ZlTest zlTest) throws Throwable {
         System.out.println("beginning----");
-        Object object = null;    //运行doSth()，返回值用一个Object类型来接收
-        object = joinPoint.proceed();
-        object = 10;   //改变返回值
+        /**
+         * 获取方法参数值
+         */
+        String key = getKey(zlTest.param(), joinPoint);
+        log.info("参数是：{}",key);
+
+
+        /**
+         * 运行doSth()，执行方法的具体业务，并获取返回值，用一个Object类型来接收
+         */
+        Object object = joinPoint.proceed();
+
+        /**
+         * 该方法的后置增强，可以修改返回值
+         */
+        object = 10;
         return object;
     }
+
+    private String getKey(String param, ProceedingJoinPoint joinPoint) {
+        Method method = ((MethodSignature)joinPoint.getSignature()).getMethod();
+        //获取方法的形参
+        String [] parameterNames = new LocalVariableTableParameterNameDiscoverer().getParameterNames(method);
+        return SpelParser.getKey(param, "", parameterNames, joinPoint.getArgs());
+    }
+
     private void sysTemOut (String str) {
         JSONObject jsStr = JSONObject.parseObject(str);
         JSONArray jsonResultArray = (JSONArray) jsStr.get("result");
