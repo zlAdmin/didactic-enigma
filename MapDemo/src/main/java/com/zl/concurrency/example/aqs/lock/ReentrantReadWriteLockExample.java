@@ -9,8 +9,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * ReentrantLock测试类
- *
+ * ReentrantLock测试类：写锁是独占锁；要获取读锁需要判断它没有写锁；要获取写锁要判断它没有读锁或者写锁；锁可以重入；写锁可以降级为读锁；
+ *                      引发的问题：可能会造成写锁饥饿，即当大量度读操作的时候，写操作获取不到锁的情况
  * @author zhagnlei
  * @ProjectName: zlAdmin
  * @create 2018-10-14 18:45
