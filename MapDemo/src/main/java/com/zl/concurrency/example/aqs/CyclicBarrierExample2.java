@@ -32,7 +32,6 @@ public class CyclicBarrierExample2 {
                     race(threadNum);
                 } catch (Exception e) {
                     log.error("exception",e);
-
                 }
             });
         }

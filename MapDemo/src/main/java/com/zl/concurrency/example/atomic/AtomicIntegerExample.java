@@ -26,9 +26,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 @ThreadSafe
 public class AtomicIntegerExample extends AbstractCountDownLunchComm {
     /** 请求总数 **/
-    public static  int clientTotal = 5000;
+    public static  int clientTotal = 10;
     /** 同时并发执行的线程数 **/
-    public static  int threadTotal = 200;
+    public static  int threadTotal = 2;
 
     public static AtomicInteger count = new AtomicInteger(0);
 
@@ -44,7 +44,8 @@ public class AtomicIntegerExample extends AbstractCountDownLunchComm {
 
 
     @Override
-    public void definedMethods() {
+    public void definedMethods() throws InterruptedException {
         count.incrementAndGet();
+        Thread.sleep(2000);
     }
 }

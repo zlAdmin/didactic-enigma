@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * CyclicBarrier测试类
+ * CyclicBarrier测试类:让一组线程到达一个屏障（也可以叫同步点）时被阻塞，直到最后一个线程到达屏障时，屏障才会开门
  *
  * @author zhagnlei
  * @ProjectName: zlAdmin
@@ -25,20 +25,21 @@ public class CyclicBarrierExample {
         for (int i = 0; i < 10; i++) {
             final int threadNum = i;
             Thread.sleep(1000);
-            exectorService.execute(()->{
+            exectorService.execute(() -> {
                 try {
                     race(threadNum);
                 } catch (Exception e) {
-                    log.error("exception",e);
+                    log.error("exception", e);
 
                 }
             });
         }
         exectorService.shutdown();
     }
+
     private static void race(int threadNum) throws Exception {
         Thread.sleep(1000);
-        log.info("{},is ready",threadNum);
+        log.info("{},is ready", threadNum);
         barrier.await();
         log.info("{} continue");
     }
