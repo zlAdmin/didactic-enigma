@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.StampedLock;
 
 /**
- * StampedLock测试类
+ * StampedLock读写锁测试类，ReentrantReadWriteLock 的增强版
  *
  * @author zhagnlei
  * @ProjectName: zlAdmin

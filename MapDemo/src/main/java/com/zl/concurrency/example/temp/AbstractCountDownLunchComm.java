@@ -21,7 +21,7 @@ import java.util.concurrent.Semaphore;
 public abstract class AbstractCountDownLunchComm {
     protected int clientTotal ;
     protected int threadTotal ;
-    private static final ExecutorService executorService = ThreadPoolInstance.getThreadPollInstance(5, 200, 0L);
+    private static final ExecutorService executorService = ThreadPoolInstance.getThreadPollInstance(5, 5000, 0L);
 
     public void execute(int clientTotal, int threadTotal) throws Exception {
         this.clientTotal = clientTotal;
