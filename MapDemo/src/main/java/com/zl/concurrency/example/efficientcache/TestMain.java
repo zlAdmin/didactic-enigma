@@ -15,9 +15,10 @@ import java.util.concurrent.ExecutorService;
  * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @Slf4j
-public class TestMain extends Memoizer4<String, BigInteger>{
+public class TestMain extends Memoizer4<String, BigInteger> {
     private static final ExecutorService executorService = ThreadPoolInstance.getThreadPollInstance(5, 200, 0L);
-    private static String[] arr = new String[]{"1","1","111","10","10","1","2","3"};
+    private static String[] arr = new String[]{"1", "1", "111", "10", "10", "1", "2", "3"};
+
     public TestMain(ExpensiveFunction c) {
         super(c);
     }
@@ -31,11 +32,11 @@ public class TestMain extends Memoizer4<String, BigInteger>{
         log.info("计算开始....");
         for (int i = 0; i < arr.length; i++) {
             final int j = i;
-            executorService.execute(()->{
+            executorService.execute(() -> {
                 try {
-                    log.info("值是：{}，结果是：{}",arr[j ],tm.compute(arr[j ]));
+                    log.info("值是：{}，结果是：{}", arr[j], tm.compute(arr[j]));
                 } catch (InterruptedException e) {
-                    log.error("exception"+e);
+                    log.error("exception" + e);
                 }
                 countDownLatch.countDown();
             });
@@ -44,8 +45,8 @@ public class TestMain extends Memoizer4<String, BigInteger>{
         countDownLatch.await();
         log.info("全部计算结束....");
         long endTime = System.currentTimeMillis();
-        log.info("计算次数为：{}",expensiveFunction.getCalculationTimes());
-        log.info("计算时间是：{}",endTime - startTime);
+        log.info("计算次数为：{}", expensiveFunction.getCalculationTimes());
+        log.info("计算时间是：{}", endTime - startTime);
 
 
     }

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Version: 1.0
  * <p>Copyright: Copyright (zl) 2018</p>
  **/
-public class ExpensiveFunction implements BaseComputable<String , BigInteger>{
+public class ExpensiveFunction implements BaseComputable<String, BigInteger> {
     private AtomicInteger calculationTimes = new AtomicInteger(0);
 
     @Override

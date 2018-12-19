@@ -12,11 +12,11 @@ import java.util.concurrent.*;
  * @Version: 1.0
  * <p>Copyright: Copyright (zl) 2018</p>
  **/
-public class Memoizer4<A,V> implements BaseComputable<A,V>  {
-    private final Map<A,Future<V>> cache = new ConcurrentHashMap<A, Future<V>>();
-    private final BaseComputable<A,V> c;
+public class Memoizer4<A, V> implements BaseComputable<A, V> {
+    private final Map<A, Future<V>> cache = new ConcurrentHashMap<A, Future<V>>();
+    private final BaseComputable<A, V> c;
 
-    public Memoizer4(BaseComputable<A,V> c) {
+    public Memoizer4(BaseComputable<A, V> c) {
         this.c = c;
     }
 
@@ -51,5 +51,4 @@ public class Memoizer4<A,V> implements BaseComputable<A,V>  {
 }
 /**
  * 通过ConcurrentHashMap的putIfAbsent的原子操作，
- *
  */
