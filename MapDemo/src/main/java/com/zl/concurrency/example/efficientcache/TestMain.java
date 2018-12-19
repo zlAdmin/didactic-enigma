@@ -43,11 +43,10 @@ public class TestMain extends Memoizer4<String, BigInteger> {
 
         }
         countDownLatch.await();
+        executorService.shutdown();
         log.info("全部计算结束....");
         long endTime = System.currentTimeMillis();
         log.info("计算次数为：{}", expensiveFunction.getCalculationTimes());
         log.info("计算时间是：{}", endTime - startTime);
-
-
     }
 }
