@@ -1,5 +1,10 @@
 package com.zl.demo.model;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
 import java.io.Serializable;
 
 /**
@@ -9,6 +14,7 @@ import java.io.Serializable;
  * @Param 
  * @return 
  **/
+@Data
 public class BasePosition implements Serializable {
     /**
      *Comment for <code>serialVersionUID</code>
@@ -20,33 +26,5 @@ public class BasePosition implements Serializable {
     private double lat;
 
     private long count;
-
-    public double getLng() {
-        return lng;
-    }
-
-    public void setLng(double lng) {
-        this.lng = lng;
-    }
-
-    public double getLat() {
-        return lat;
-    }
-
-    public void setLat(double lat) {
-        this.lat = lat;
-    }
-
-    public long getCount() {
-        return count;
-    }
-
-    public void setCount(long count) {
-        this.count = count;
-    }
-
-
-
-
 
 }
