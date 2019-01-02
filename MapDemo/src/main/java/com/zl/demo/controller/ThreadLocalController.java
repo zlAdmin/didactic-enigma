@@ -25,12 +25,12 @@ import javax.validation.Validator;
 @Controller
 @RequestMapping("threadLocal")
 public class ThreadLocalController {
-    @Autowired
-    private Validator validator;
+
     @RequestMapping(value = "/test", method = RequestMethod.POST)
     @ResponseBody
     @ZlTest(param = "#id")
-    public long test(@NonNull String id){
+    public long test(@NonNull String id) {
+        log.info("参数是：{}", id);
         return RequestHolder.getId();
     }
 }

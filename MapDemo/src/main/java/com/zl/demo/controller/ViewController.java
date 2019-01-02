@@ -16,6 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import java.util.concurrent.*;
 
+/**
+ * @Des    基于Storm的热力图前台展示功能
+ * @Author zhanglei
+ * @Date 16:53 2018/12/28
+ **/
 @RestController
 @RequestMapping(value = "/show")
 @Slf4j
@@ -46,7 +51,7 @@ public class ViewController {
 
 
     /**
-     * @Description 基于Ajax长连接，实现主动通知web应用
+     * @Description 基于Ajax长连接，实现主动通知web应用,这里使用的是Spring封装的DeferredResult
      * @return 
      * @throws 
      * @Author zhanglei
