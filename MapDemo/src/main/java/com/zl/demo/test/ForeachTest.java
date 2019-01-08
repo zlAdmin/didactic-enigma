@@ -22,7 +22,7 @@ import static com.zl.unit.printunit.PrintUnit.print;
 public class ForeachTest {
     public  static volatile boolean b = false;
     public  static  void main(String[] arg){
-        ForeachTest.testThread();
+        ForeachTest.testhashMap();
     }
     private static void testhashMap(){
         System.out.print(System.currentTimeMillis());

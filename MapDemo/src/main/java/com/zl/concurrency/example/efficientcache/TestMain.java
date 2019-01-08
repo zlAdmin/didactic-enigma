@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutorService;
  **/
 @Slf4j
 public class TestMain extends Memoizer4<String, BigInteger> {
-    private static final ExecutorService executorService = ThreadPoolInstance.getThreadPollInstance(5, 200, 0L);
+    private static final ExecutorService executorService = ThreadPoolInstance.getThreadPollInstance(5, 50, 0L);
     private static String[] arr = new String[]{"1", "1", "111", "10", "10", "1", "2", "3"};
 
     public TestMain(ExpensiveFunction c) {
@@ -27,7 +27,7 @@ public class TestMain extends Memoizer4<String, BigInteger> {
         ExpensiveFunction expensiveFunction = new ExpensiveFunction();
         TestMain tm = new TestMain(expensiveFunction);
 
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         final CountDownLatch countDownLatch = new CountDownLatch(arr.length);
         log.info("计算开始....");
         for (int i = 0; i < arr.length; i++) {
@@ -40,12 +40,11 @@ public class TestMain extends Memoizer4<String, BigInteger> {
                 }
                 countDownLatch.countDown();
             });
-
         }
         countDownLatch.await();
         executorService.shutdown();
         log.info("全部计算结束....");
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         log.info("计算次数为：{}", expensiveFunction.getCalculationTimes());
         log.info("计算时间是：{}", endTime - startTime);
     }

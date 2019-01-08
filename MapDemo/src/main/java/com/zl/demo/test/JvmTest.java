@@ -30,14 +30,23 @@ public class JvmTest {
 
         print("TOTAL_ MEMORY = "+totalMemory +"(字节)"+(totalMemory/(double)1024/1024) + "MB");
 
-        String str = "www.baidu.com";
+        testClassLoad();
 
-        while(true){
+    }
 
-            str += str + new Random().nextInt(88888888) + new Random().nextInt(99999999);
 
-        }
-
+    /**
+     * @Description 查看类的加载器方式
+     * @return void
+     * @throws 
+     * @Author zhanglei
+     * @Date 17:25 2018/12/21
+     * @Param []
+     **/
+    private static void testClassLoad () {
+        ClassLoader  c  = JvmTest.class.getClassLoader() ;
+        ClassLoader  cl =  c.getParent( );
+        ClassLoader  c2 =  cl . getParent() ;
     }
 
 
