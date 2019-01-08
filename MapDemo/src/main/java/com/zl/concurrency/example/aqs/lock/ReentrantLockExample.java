@@ -42,9 +42,9 @@ public class ReentrantLockExample extends AbstractCountDownLunchComm{
 
 
     @Override
-    public synchronized void definedMethods() {
-        lock.lock();
+    public  void definedMethods() {
         try {
+            lock.lock();
             count++;
         } finally {
             lock.unlock();
