@@ -3,7 +3,6 @@ package com.zl.demo.test;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
-import static com.zl.unit.printunit.PrintUnit.print;
 
 /**
  *
@@ -38,8 +37,8 @@ public class ForeachTest {
             String s = String.valueOf(a);
             list.add("hello"+s);
         }
-        list.forEach((String i)->{
-            print(i);
+        list.forEach((String i)-> {
+            System.out.println(i);
         });
         //去重操作
         List newList = list.stream().distinct().collect(Collectors.toList());
