@@ -1,6 +1,7 @@
 package com.zl.reids;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPubSub;
 import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.Transaction;
 
@@ -20,6 +21,8 @@ public class RedisPipelineTest {
 
     public static void main(String[] args) {
         jedis.auth("123456");
+
+        testSub();
 
 
     }
@@ -80,5 +83,34 @@ public class RedisPipelineTest {
             }
         }
     }
+
+    /**
+     * 基于redis的MQ消息发送机制
+     */
+    public static void testPub() throws InterruptedException {
+        for (int i = 0; i < 100; i++) {
+            jedis.publish("zl", "hello" + i);
+            Thread.sleep(1000);
+        }
+    }
+
+    /**
+     *  测试消息订阅
+     */
+    public static void testSub(){
+        jedis.subscribe(new MyListener(), "zl");
+    }
+
+    /**
+     * 内部类，负责处理消息
+     */
+    private static class MyListener extends  JedisPubSub {
+        @Override
+        public void onMessage(String channel, String message) {
+            System.out.println(channel + ":" + message);
+        }
+    }
+
+
 }
 
