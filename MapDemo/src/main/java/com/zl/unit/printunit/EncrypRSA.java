@@ -1,7 +1,6 @@
 package com.zl.unit.printunit;
 
 import org.apache.tomcat.util.codec.binary.Base64;
-
 import java.io.FileOutputStream;
 import java.security.*;
 import java.security.interfaces.RSAPrivateKey;
@@ -20,12 +19,15 @@ import javax.crypto.NoSuchPaddingException;
  * @ProjectName: MapDemo
  * @create 2019-04-29 10:49
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2019</p>
+ *           <p>
+ *           Copyright: Copyright (acmtc) 2019
+ *           </p>
  **/
 public class EncrypRSA {
 
-    private static final String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDiMPz4qbXd9we8q4gnaGg3NaeH1Vbj9JA7odkBDDKCX5RoJotSPLX5n/6dWh3imUVmc6HNMo8oBOhki/W7+1KMyOUqI+h/uQDa35EvgrUSPwyc0QZszCyakk0uXtGqLdQz/IgrsywXfIzNL5sQ2679xinch4efgaikApmXYhSDywIDAQAB";
-    private static final String privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAOIw/Piptd33B7yriCdoaDc1p4fVVuP0kDuh2QEMMoJflGgmi1I8tfmf/p1aHeKZRWZzoc0yjygE6GSL9bv7UozI5Soj6H+5ANrfkS+CtRI/DJzRBmzMLJqSTS5e0aot1DP8iCuzLBd8jM0vmxDbrv3GKdyHh5+BqKQCmZdiFIPLAgMBAAECgYEAqTkrWcJmbRzu7emLIKiNJ5j9sLMcockLy4Fnv8/nTgDCIDWOEEWZg5t+uyx7pVc0Q9UI3WMRFUiusOLBQxVhCMhbwzOe+aD+xxXkA5gcQz3lURHkXcCcrSVfOyN9GK2pQg1clmYBwYjNacp4X8UOwQWGhcK1XSAsokGrhHGcwrkCQQD/zImXC1ONUiljf59xjCAbO/G42nbMdaSJIPcGDI9CY4XD135IsNsmPPhWxu4HiJ5/fuh8Z6kapBRJvDldbKeNAkEA4l5+gDpOiAsGO0CVDXgk6kT9yADbTuxOpPM4FEWfsMUf0h8vYO0B+3VPrQ7/mrV5WrrfBufN5hukXCHlDZU2twJAIBVrfIJzLFqNzmkHepp0vHW8T88271YiGQEFesDAhzcsY+/3au6jzhv/mgLBgDhmiN9GEbR+xVSnJshw+YLTUQJBAJQ4i1wq0YECtvHVN8O6B3Hd+s4awX7L/DLFjtK3Q/jbGhrbkIpGpiWgiqsmRvdmHC/sbFx5K7igIN6y0ugx68ECQE7sFCZ+9va95ZMnYdhDvHypZmOfZVZIALT5CfFx1H8y5Qyc0jR6vRKHSv96kVOHlg3XihbIZryD7zqm37jnb6I=";
+    private static final String PUBLICKEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpAFY0T/4bLYM/8Ai82zEvmM5xO3+J9gouUy8JLv+6hqeZBB7J5ZXzhhAvvhxnorxTgnptCZS5+hABfMxrq9Kw3y4fVGYGw21LlrUovcS3g9wJ1Ywmu7KQsvXfRWyOXJTqJPjN+XFYy71dT606P6v7WVmvFKzGOONcEIUP4C/xJwIDAQAB";
+    private static final String PRIVATEKEY = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKkAVjRP/hstgz/wCLzbMS+YznE7f4n2Ci5TLwku/7qGp5kEHsnllfOGEC++HGeivFOCem0JlLn6EAF8zGur0rDfLh9UZgbDbUuWtSi9xLeD3AnVjCa7spCy9d9FbI5clOok+M35cVjLvV1PrTo/q/tZWa8UrMY441wQhQ/gL/EnAgMBAAECgYEAkPHI/XTd61FNkDi+Rbt4o+napSLyb9ClSrXtUWMN0VxLweDWxzIxOXtxxoC2u+vGuZjeh0YAWMEvmRb//BiRydeHng3uNLH0KKCfZDpUQKHnWubJqH54tpmXdqdNheAZ78i8KKH4wqzBfvEbO+oCDPKe0HwrH4+ln63d5gsqGoECQQDy69in7ORuHmDkjxK29AUEAkC0QFZXotmqyuMjkYKFr/itA0aYf4HV2VuUaqNAbxHeAoCqb0P981Gx6i5n4ZcFAkEAshmpK/GUc0qRsnoDQRMIrd6cGn+OejWDNZN7hLlkY9R5gkCnYMrnn4Si/FyLwDZ3tQBzArV5zQXVFYZ1bp0HOwJAQ2LxYwPwCiwbLMwToPToP0hwso/2Y7ElOJ+3irJexr8d+MCj4MHePnhhUzaRutoU1sVS8/SRo+zPiM8xuFd4EQJAFWMbe5lxGD82K9aXGXNtsWNwH4Z915MhhIeHZ7LTqWFUjh2xe+Ah3HgTEncSmSxxR50cMpEUZVhz9DfHVlcpDQJBAM/YgTG6Yos7ImZGFfjnkgB/VVAAhL8ip+E5JKz4+QRu0H4TCHLCFVwzjl6Es7JHTrj3ZOcEVWsN+SCcAR8kwu8=";
+
     /**
      * 加密
      *
@@ -38,12 +40,13 @@ public class EncrypRSA {
      * @throws IllegalBlockSizeException
      * @throws BadPaddingException
      */
-    protected byte[] encrypt(RSAPublicKey publicKey, byte[] srcBytes) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+    protected byte[] encrypt(RSAPublicKey publicKey, byte[] srcBytes) throws NoSuchAlgorithmException,
+            NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
 
         if (publicKey != null) {
-            //Cipher负责完成加密或解密工作，基于RSA
+            // Cipher负责完成加密或解密工作，基于RSA
             Cipher cipher = Cipher.getInstance("RSA");
-            //根据公钥，对Cipher对象进行初始
+            // 根据公钥，对Cipher对象进行初始
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
             byte[] resultBytes = cipher.doFinal(srcBytes);
             return resultBytes;
@@ -63,18 +66,18 @@ public class EncrypRSA {
      * @throws IllegalBlockSizeException
      * @throws BadPaddingException
      */
-    protected byte[] decrypt(RSAPrivateKey privateKey, byte[] srcBytes) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+    public byte[] decrypt(RSAPrivateKey privateKey, byte[] srcBytes) throws NoSuchAlgorithmException,
+            NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         if (privateKey != null) {
-            //Cipher负责完成加密或解密工作，基于RSA
+            // Cipher负责完成加密或解密工作，基于RSA
             Cipher cipher = Cipher.getInstance("RSA");
-            //根据公钥，对Cipher对象进行初始化
+            // 根据公钥，对Cipher对象进行初始化
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
             byte[] resultBytes = cipher.doFinal(srcBytes);
             return resultBytes;
         }
         return null;
     }
-
 
     /**
      * @param args
@@ -86,52 +89,47 @@ public class EncrypRSA {
      */
     public static void main(String[] args) throws Exception {
         EncrypRSA rsa = new EncrypRSA();
-        String msg = "郭XX-精品相声";
-       /* //KeyPairGenerator类用于生成公钥和私钥对，基于RSA算法生成对象
-        KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        //初始化密钥对生成器，密钥大小为1024位
-        keyPairGen.initialize(1024);
-        //生成一个密钥对，保存在keyPair中
-        KeyPair keyPair = keyPairGen.generateKeyPair();
-        //得到私钥
-        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
-        //得到公钥
-        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();*/
-        //用公钥加密
+        String msg = "985f67e2-130f-48b6-a99e-744ad56d15d9";
+        generateKey();
+        // 用公钥加密
 
-        RSAPrivateKey privateKey = (RSAPrivateKey) getPrivateKey();
-        //得到公钥
-        RSAPublicKey publicKey = (RSAPublicKey) getPublicKey();
+        RSAPrivateKey privateKey = (RSAPrivateKey) getPrivateKey(PRIVATEKEY);
+        // 得到公钥
+        RSAPublicKey publicKey = (RSAPublicKey) getPublicKey(PUBLICKEY);
         byte[] srcBytes = msg.getBytes();
-        byte[] resultBytes = rsa.encrypt((RSAPublicKey) getPublicKey(), srcBytes);
-        //用私钥解密
-        byte[] decBytes = rsa.decrypt((RSAPrivateKey) getPrivateKey(), resultBytes);
+        byte[] resultBytes = rsa.encrypt((RSAPublicKey) getPublicKey(PUBLICKEY), srcBytes);
+        // 用私钥解密
+        byte[] decBytes = rsa.decrypt((RSAPrivateKey) getPrivateKey(PRIVATEKEY), resultBytes);
         System.out.println("明文是:" + msg);
         System.out.println("加密后是:" + new String(resultBytes));
-        saveFile("f://key/ss.txt",new String(resultBytes));
+        saveFile("f://key/sst.txt", new String(resultBytes));
         System.out.println("解密后是:" + new String(decBytes));
 
     }
 
-    public static void saveFile(String path,String key)throws Exception{
+    /**
+     * 保存文件
+     * @param path
+     * @param key
+     * @throws Exception
+     */
+    public static void saveFile(String path, String key) throws Exception {
         FileOutputStream fos = new FileOutputStream(path);
         fos.write(key.getBytes());
         fos.flush();
         fos.close();
     }
 
-
     /**
      * @Description 根据字符串生产公钥
      * @return java.security.PublicKey
-     * @throws 
-     * @Author zhanglei
+     * @throws @Author zhanglei
      * @Date 14:25 2019/4/29
      * @Param [key]
      **/
-    public static PublicKey getPublicKey() throws Exception {
+    public static PublicKey getPublicKey(String publicKeys) throws Exception {
         byte[] keyBytes;
-        keyBytes = Base64.decodeBase64(publicKey);
+        keyBytes = Base64.decodeBase64(publicKeys);
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
         PublicKey publicKey = keyFactory.generatePublic(keySpec);
@@ -144,13 +142,54 @@ public class EncrypRSA {
      * @return
      * @throws Exception
      */
-    public static PrivateKey getPrivateKey() throws Exception {
+    public static PrivateKey getPrivateKey(String privateKeys) throws Exception {
         byte[] keyBytes;
-        keyBytes = Base64.decodeBase64(privateKey);
+        keyBytes = Base64.decodeBase64(privateKeys);
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
         PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
         return privateKey;
+    }
+
+    /**
+     * Sring转byte数组
+     */
+    public static byte[] stringToByte(String msg) {
+        byte[] msgByte = Base64.decodeBase64(msg);
+        return msgByte;
+    }
+
+    /**
+     * byte数组转字符串
+     */
+    public static String byteToString(byte[] bytes) {
+        String msg = Base64.encodeBase64String(bytes);
+        return msg;
+    }
+
+    /**
+     * 生成公钥私钥
+     */
+    public static void generateKey() {
+        try {
+            // 基于RSA算法生成对象
+            KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
+            //初始化密钥对生成器，密钥大小为1024位
+            keyPairGen.initialize(512);
+            //生成一个密钥对，保存在keyPair中
+            KeyPair keyPair = keyPairGen.generateKeyPair();
+            //得到私钥 RSAPrivateKey
+            RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
+            //得到公钥 RSAPublicKey
+            RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
+            System.out.println("私钥：" + Base64.encodeBase64String(privateKey.getEncoded()));
+            System.out.println("公钥：" + Base64.encodeBase64String(publicKey.getEncoded()));
+            /* saveFile("c://privateKey.txt", Base64.encodeBase64String(privateKey.getEncoded()));
+            saveFile("c://publicKey.txt", Base64.encodeBase64String(publicKey.getEncoded())); */
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
 }
