@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
  * @ProjectName: MapDemo
  * @create 2018-11-13 9:59
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @Slf4j
 public class GuavaStringUnitExample {

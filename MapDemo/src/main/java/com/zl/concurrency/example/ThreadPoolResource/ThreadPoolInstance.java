@@ -11,7 +11,7 @@ import java.util.concurrent.*;
  * @ProjectName: MapDemo
  * @create 2018-10-29 16:22
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 public class ThreadPoolInstance {
 

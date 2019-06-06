@@ -10,7 +10,7 @@ import java.util.Vector;
  * @ProjectName: MapDemo
  * @create 2018-09-16 20:05
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 public class VectorExample1 {
     private static void test1(Vector<Integer> v1){

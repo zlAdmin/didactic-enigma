@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * @ProjectName: MapDemo
  * @create 2019-06-06 9:43
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2019</p>
+ * <p>Copyright: Copyright (zl) 2019</p>
  **/
 public class StringUtil {
     private static final Logger log = LoggerFactory.getLogger(StringUtil.class);
@@ -141,7 +141,7 @@ public class StringUtil {
     }
 
     /**
-     * 将明文中的邮箱转换成eam****@acmtc.com形式
+     * 将明文中的邮箱转换成eam****@zl.com形式
      * @param email
      * @return
      */

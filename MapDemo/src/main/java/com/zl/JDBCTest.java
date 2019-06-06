@@ -11,12 +11,12 @@ import java.util.Map;
  * @ProjectName: MapDemo
  * @create 2019-01-17 15:11
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2019</p>
+ * <p>Copyright: Copyright (zl) 2019</p>
  **/
 public class JDBCTest {
 
     public static Connection getCon(){
-        String URL = "jdbc:mysql://10.8.5.100:3306/acmtc?useSSL=false&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true";
+        String URL = "jdbc:mysql://10.8.3.110:3306/zl?useSSL=false&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true";
         String USER = "root";
         String PASSWORD = "root";
         //1.加载驱动程序

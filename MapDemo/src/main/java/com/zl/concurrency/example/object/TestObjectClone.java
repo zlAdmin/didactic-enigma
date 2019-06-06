@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
  * @ProjectName: MapDemo
  * @create 2018-12-07 10:36
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @Slf4j
 public class TestObjectClone implements Cloneable {

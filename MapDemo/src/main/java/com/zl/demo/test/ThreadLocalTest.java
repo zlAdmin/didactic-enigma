@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @ProjectName: MapDemo
  * @create 2018-11-21 15:18
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 public class ThreadLocalTest {
 

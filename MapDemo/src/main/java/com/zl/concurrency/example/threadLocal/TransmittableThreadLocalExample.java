@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @ProjectName: MapDemo
  * @create 2018-12-05 10:24
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @Slf4j
 public class TransmittableThreadLocalExample extends AbstractCountDownLunchComm {

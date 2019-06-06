@@ -14,7 +14,7 @@ import java.util.concurrent.Semaphore;
  * @ProjectName: MapDemo
  * @create 2018-09-14 16:59
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @Slf4j
 public abstract class AbstractCountDownLunchTemp {

@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
  * @ProjectName: MapDemo
  * @create 2018-12-17 17:03
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @Slf4j
 public class CyclicBarrierSum {

@@ -10,7 +10,7 @@ import com.zl.concurrency.annoations.ThreadSafe;
  * @ProjectName: zlAdmin
  * @create 2018-09-15 13:25
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 @ThreadSafe
 @NotRecommend

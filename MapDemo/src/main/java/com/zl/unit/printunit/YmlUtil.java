@@ -16,7 +16,7 @@ import java.util.Map;
  * @ProjectName: MapDemo
  * @create 2019-06-06 9:42
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2019</p>
+ * <p>Copyright: Copyright (zl) 2019</p>
  **/
 public class YmlUtil {
     private static Map<String,String> allMap=new HashMap<String,String>();

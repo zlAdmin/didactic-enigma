@@ -7,7 +7,7 @@ package com.zl.concurrency.example.object;
  * @ProjectName: MapDemo
  * @create 2018-12-06 16:30
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2018</p>
+ * <p>Copyright: Copyright (zl) 2018</p>
  **/
 public class WaitNotifyTest {
     /** 在多线程间共享的对象上使用wait */
