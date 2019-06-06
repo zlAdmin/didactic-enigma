@@ -22,3 +22,6 @@ spring:
       initialSize: 30
       minIdle: 30
       maxActive: 100
+zl:
+  key:
+    path: classpath:keys/

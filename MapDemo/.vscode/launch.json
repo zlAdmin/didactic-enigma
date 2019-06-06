@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EncrypRSA",
+            "request": "launch",
+            "mainClass": "com.zl.unit.printunit.EncrypRSA",
+            "projectName": "demo"
+        }
+    ]
+}
