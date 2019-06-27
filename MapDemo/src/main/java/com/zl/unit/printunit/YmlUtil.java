@@ -19,7 +19,7 @@ import java.util.Map;
  * <p>Copyright: Copyright (zl) 2019</p>
  **/
 public class YmlUtil {
-    private static Map<String,String> allMap=new HashMap<String,String>();
+    private static Map<String,String> allMap=new HashMap<>();
     static {
         Yaml yaml = new Yaml();
         InputStream inputStream = YmlUtil.class.getResourceAsStream("/application.yml");

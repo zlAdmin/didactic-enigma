@@ -20,7 +20,7 @@ public class ReadKeysUtil {
 
     static {
         try {
-            File privateKey = ResourceUtils.getFile(CONFIG_PATH_PREFIX + "public_key");
+            File privateKey = ResourceUtils.getFile(CONFIG_PATH_PREFIX + "private_key");
             PRIVATE_KEY = FileUtils.readFileToString(privateKey);
         } catch (Exception e) {
             System.out.println("资源读取错误");
