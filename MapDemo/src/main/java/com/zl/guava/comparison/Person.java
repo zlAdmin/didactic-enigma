@@ -1,6 +1,8 @@
-package com.zl.guava.ComparisonChainTest;
+package com.zl.guava.comparison;
 
 import com.google.common.collect.ComparisonChain;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 对象之间的比较
@@ -9,27 +11,13 @@ import com.google.common.collect.ComparisonChain;
  * @ProjectName: MapDemo
  * @create 2019-07-24 18:27
  * @Version: 1.0
- * <p>Copyright: Copyright (acmtc) 2019</p>
+ * <p>Copyright: Copyright (zl) 2019</p>
  **/
-public class Perion implements Comparable<Perion> {
+@Getter
+@Setter
+public class Person implements Comparable<Person> {
     private String name;
     private Integer age;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     /**
      * @return int
@@ -40,7 +28,7 @@ public class Perion implements Comparable<Perion> {
      * @Param [that]
      **/
     @Override
-    public int compareTo(Perion that) {
+    public int compareTo(Person that) {
         return ComparisonChain.start()
                 .compare(this.age, that.age)
                 .compare(this.name, that.name).result();
